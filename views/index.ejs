@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tiny Url Generator</title>
+    <link rel="icon" href="images/img.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+
+  <div class="container">
+    <h1>URL Shortener</h1>
+    <form action="/shortUrls" method="POST" class="my-4 form-inline">
+      <label for="fullUrl" class="sr-only">Url</label>
+      <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+      <button class="btn btn-success" type="submit">Shrink</button>
+    </form>
+
+    <table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+          <th>Full URL</th>
+          <th>Short URL</th>
+          <th>Clicks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% shortUrls.forEach(shortUrl => { %>
+          <tr>
+            <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+            <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+            <td><%= shortUrl.clicks %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+        <!-- Footer -->
+        <footer>
+        	<div class="footer-top">
+		        <div class="container">
+		        	<div class="row">
+		        		<div class="col-md-3 footer-about wow fadeInUp">
+		        			<img class="logo-footer" src="image/img.png" alt="logo-footer" >
+		        			<p>
+		        				We are a young company always looking for new and creative ideas to help you with our services in your everyday work.
+		        			</p>
+		        			<p><a href="#">Our Team</a></p>
+	                    </div>
+		        		<div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
+		        			<h3>Contact</h3>
+		                	<p><i class="fas fa-map-marker-alt"></i> Bangalore, karnataka</p>
+		                	<p><i class="fas fa-phone"></i> Phone: +91-9902202299</p>
+		                	<p><i class="fas fa-envelope"></i> Email: <a href="support@instacar.in">support@instacar.in</a></p>
+	                    </div>
+	                    <div class="col-md-4 footer-links wow fadeInUp">
+	                    	<div class="row">
+	                    		<div class="col">
+	                    			<h3>Links</h3>
+	                    		</div>
+	                    	</div>
+	                    	<div class="row">
+	                    		<div class="col-md-6">
+	                    			<p><a class="scroll-link" href="#top-content">Home</a></p>
+	                    			<p><a href="#">Features</a></p>
+	                    			<p><a href="#">How it works</a></p>
+	                    			<p><a href="#">Our Journey</a></p>
+	                    		</div>
+	                    		<div class="col-md-6">
+	                    			<p><a href="#">Plans &amp; pricing</a></p>
+	                    			<p><a href="#">Affiliates</a></p>
+	                    			<p><a href="#">Terms</a></p>
+	                    		</div>
+	                    	</div>
+	                    </div>
+		            </div>
+		        </div>
+	        </div>
+	        <div class="footer-bottom">
+	        	<div class="container">
+	        		<div class="row">
+	           			<div class="col-md-6 footer-copyright">
+	                    	&copy; InstaCar Technologies Pvt. Ltd. <a href="https://instacar.in/">instaCar</a>
+	                    </div>
+	           			<div class="col-md-6 footer-social">
+	                    	<a href="#"><i class="fab fa-facebook-f"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-google-plus-g"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-pinterest"></i></a>
+	                    </div>
+	           		</div>
+	        	</div>
+	        </div>
+        </footer>
+    </body>
+</html>
